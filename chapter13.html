@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 13: Payment of Tax - Tax Gurukul</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+            color: #333;
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(90deg, #0abde3 0%, #54c7f0 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .chapter-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, #2e86de, #68a5f0);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .chapter-content {
+            background: white;
+            border-radius: 0;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #0abde3;
+            font-size: 2.2rem;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2e86de;
+        }
+
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            color: #1565c0;
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        ul, ol {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #444;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 6px solid #2196f3;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .key-points h3 {
+            color: #0d47a1;
+            margin-top: 0;
+        }
+
+        .key-points ul {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background-color: #fff3e0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #e65100;
+        }
+
+        .payment-definition {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left: 6px solid #9c27b0;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .method-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #00d2d3;
+        }
+
+        .method-card h4 {
+            color: #00838f;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .method-card p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        .process-steps {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 6px solid #4caf50;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .process-steps h3 {
+            color: #2e7d32;
+        }
+
+        .examples {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-left: 6px solid #ffc107;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .examples h3 {
+            color: #e65100;
+        }
+
+        .rules-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 1.1rem;
+        }
+
+        .rules-table th {
+            background: linear-gradient(45deg, #0abde3, #54c7f0);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .rules-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .rules-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        .rules-table tr:hover {
+            background-color: #e1f5fe;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(90deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            margin-top: 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .chapter-title {
+                font-size: 2.2rem;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .chapter-content {
+                padding: 25px;
+            }
+            
+            p, ul, ol {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .payment-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> > Chapter 13: Payment of Tax
+                </div>
+                <h1 class="chapter-title">Chapter 13: Payment of Tax</h1>
+                <p class="chapter-subtitle">Understanding GST Tax Payment Procedures and Mechanisms</p>
+            </div>
+        </header>
+
+        <div class="navigation">
+            <a href="chapter12.html" class="nav-link">← Previous Chapter: E-Way Bill</a>
+            <a href="chapter14.html" class="nav-link">Next Chapter: TDS and TCS under GST →</a>
+        </div>
+
+        <div class="content-container">
+            <div class="chapter-content">
+                <h2>Introduction to GST Tax Payment</h2>
+                <p><span class="highlight">Payment of tax</span> under GST is a critical compliance requirement where registered persons must discharge their tax liability by making payments to the government within prescribed time limits. The system ensures timely collection of revenue and maintains the flow of input tax credit throughout the supply chain.</p>
+                
+                <div class="payment-definition">
+                    <h3>Definition and Importance</h3>
+                    <p>Tax payment under GST refers to the process of depositing the calculated tax liability (output tax minus input tax credit) with the government through authorized channels. It is essential for maintaining compliance, avoiding interest and penalties, and ensuring smooth business operations.</p>
+                </div>
+
+                <h2>Legal Framework</h2>
+                <p>Tax payment provisions are governed by Sections 45 to 51 of the CGST Act, 2017:</p>
+                <ul>
+                    <li><strong>Section 45:</strong> Deposit of tax collected in electronic form</li>
+                    <li><strong>Section 46:</strong> Utilization of input tax credit</li>
+                    <li><strong>Section 47:</strong> Manner of payment of tax</li>
+                    <li><strong>Section 48:</strong> Interest on delayed payment</li>
+                    <li><strong>Section 49:</strong> Payment of tax in certain cases</li>
+                    <li><strong>Section 50:</strong> Recovery of tax</li>
+                    <li><strong>Section 51:</strong> Tax deduction at source</li>
+                </ul>
+
+                <div class="key-points">
+                    <h3>Key Points to Remember</h3>
+                    <ul>
+                        <li>Tax must be paid in <span class="highlight">electronic form</span> only</li>
+                        <li>Payment due by <span class="highlight">20th of next month</span> for monthly filers</li>
+                        <li><span class="highlight">IGST</span> paid first, then <span class="highlight">CGST</span>, then <span class="highlight">SGST/UTGST</span></li>
+                        <li>Interest @ <span class="highlight">18% per annum</span> for delayed payments</li>
+                        <li>Proper <span class="highlight">accounting</span> and <span class="highlight">reconciliation</span> required</li>
+                    </ul>
+                </div>
+
+                <h2>Tax Payment Liability</h2>
+                <p>Registered persons are liable to pay tax on:</p>
+                <ul>
+                    <li>Output tax on outward supplies</li>
+                    <li>Tax on reverse charge mechanism supplies</li>
+                    <li>Tax on supplies made through e-commerce platforms</li>
+                    <li>Tax on import of goods and services</li>
+                    <li>Interest, penalties, and other amounts</li>
+                </ul>
+
+                <h2>Methods of Tax Payment</h2>
+                <div class="payment-methods">
+                    <div class="method-card">
+                        <h4>Electronic Cash Ledger</h4>
+                        <p>Main account for tax payments. All deposits made through this ledger. Maintained separately for CGST, SGST, IGST, and Cess.</p>
+                    </div>
+                    
+                    <div class="method-card">
+                        <h4>Electronic Credit Ledger</h4>
+                        <p>Account for input tax credit. ITC automatically credited and can be used for tax payments.</p>
+                    </div>
+                    
+                    <div class="method-card">
+                        <h4>Electronic Liability Register</h4>
+                        <p>Tracks tax liabilities as per returns filed. Payments made against these liabilities.</p>
+                    </div>
+                </div>
+
+                <h2>Payment Process</h2>
+                <div class="process-steps">
+                    <h3>Step-by-Step Payment Process</h3>
+                    <ol>
+                        <li><strong>Calculate Tax Liability:</strong> Determine output tax, ITC, and net tax payable</li>
+                        <li><strong>Deposit Funds:</strong> Transfer money to electronic cash ledger through authorized banks</li>
+                        <li><strong>File Returns:</strong> GSTR-1, GSTR-3B, or other applicable returns</li>
+                        <li><strong>Create Challan:</strong> Generate challan in GST portal for tax payment</li>
+                        <li><strong>Make Payment:</strong> Pay using net banking, credit/debit card, or NEFT/RTGS</li>
+                        <li><strong>Generate CPIN:</strong> Common Portal Identification Number generated after payment</li>
+                        <li><strong>Update Ledger:</strong> Payment reflected in electronic cash ledger</li>
+                        <li><strong>Utilize Credit:</strong> Use ITC from electronic credit ledger for payments</li>
+                    </ol>
+                </div>
+
+                <h2>Payment Due Dates</h2>
+                <table class="rules-table">
+                    <tr>
+                        <th>Taxpayer Category</th>
+                        <th>Due Date for Payment</th>
+                    </tr>
+                    <tr>
+                        <td>Regular Taxpayers (Monthly)</td>
+                        <td>By 20th of the next month</td>
+                    </tr>
+                    <tr>
+                        <td>Regular Taxpayers (Quarterly)</td>
+                        <td>By 20th of the month following the quarter</td>
+                    </tr>
+                    <tr>
+                        <td>Composition Dealers</td>
+                        <td>By 18th of the month following the quarter</td>
+                    </tr>
+                    <tr>
+                        <td>E-commerce Operators (TCS)</td>
+                        <td>By 10th of the next month</td>
+                    </tr>
+                    <tr>
+                        <td>TDS Deductors</td>
+                        <td>By 10th of the next month</td>
+                    </tr>
+                </table>
+
+                <div class="examples">
+                    <h3>Tax Payment Scenarios</h3>
+                    <ul>
+                        <li><strong>Regular Supplier:</strong> Company with output tax ₹50,000 and ITC ₹30,000. Net payable ₹20,000 by 20th of next month.</li>
+                        <li><strong>Reverse Charge:</strong> Dealer receiving goods from unregistered supplier worth ₹1,00,000. Pays 18% GST ₹18,000 on reverse charge basis.</li>
+                        <li><strong>E-commerce Operator:</strong> Marketplace collecting TCS at 1% on supplies. Pays TCS by 10th of next month.</li>
+                        <li><strong>Import:</strong> Importer paying IGST on imported goods at the time of customs clearance.</li>
+                    </ul>
+                </div>
+
+                <h2>Interest on Delayed Payments</h2>
+                <p>Interest is levied for delayed tax payments:</p>
+                    <ul>
+                        <li><strong>Rate:</strong> 18% per annum on outstanding tax amount</li>
+                        <li><strong>Calculation:</strong> Simple interest from due date till actual payment date</li>
+                        <li><strong>Minimum Period:</strong> Interest calculated for minimum 1 month even if delay is less</li>
+                        <li><strong>Recovery:</strong> Automatically calculated and must be paid along with tax</li>
+                    </ul>
+
+                <h2>Authorized Payment Methods</h2>
+                <p>Tax payments can be made through the following channels:</p>
+                <ul>
+                    <li><strong>Net Banking:</strong> Through authorized banks with GST integration</li>
+                    <li><strong>Credit/Debit Cards:</strong> Via GST portal with applicable charges</li>
+                    <li><strong>NEFT/RTGS:</strong> Electronic fund transfer through banks</li>
+                    <li><strong>Over the Counter:</strong> Through authorized bank branches</li>
+                    <li><strong>E-payment:</strong> Through GST portal using various payment gateways</li>
+                </ul>
+
+                <h2>Tax Payment Reconciliation</h2>
+                <p>Proper reconciliation is essential for accurate compliance:</p>
+                    <ul>
+                        <li>Monthly reconciliation of cash ledger with bank statements</li>
+                        <li>Matching of tax paid with liabilities reported in returns</li>
+                        <li>Verification of ITC utilization from credit ledger</li>
+                        <li>Reconciliation of challan status in GST portal</li>
+                        <li>Resolution of any discrepancies or mismatches</li>
+                    </ul>
+
+                <h2>Common Payment Issues</h2>
+                <p>Businesses commonly face these tax payment challenges:</p>
+                <ul>
+                    <li>Delay in fund transfers leading to interest liability</li>
+                    <li>Technical issues with GST portal during payment</li>
+                    <li>Mismatch between challan generation and bank realization</li>
+                    <li>Incorrect utilization of ITC from credit ledger</li>
+                    <li>Non-receipt of CPIN after payment</li>
+                </ul>
+
+                <h2>Recent Amendments and Updates</h2>
+                <p>The GST Council has made several updates to payment provisions:</p>
+                <ul>
+                    <li>Simplified payment procedures for small taxpayers</li>
+                    <li>Enhanced mobile payment options</li>
+                    <li>Improved challan tracking mechanisms</li>
+                    <li>Special provisions for MSMEs</li>
+                    <li>Streamlined interest calculation and payment</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Timely and accurate payment of GST is fundamental to maintaining compliance and avoiding interest and penalties. Understanding the payment mechanisms, due dates, and reconciliation procedures ensures smooth business operations and financial management. Regular monitoring of tax liabilities, proper fund planning, and implementation of systematic payment processes help businesses meet their obligations efficiently. Staying updated with payment procedure changes and leveraging technology for automated payment tracking contribute to effective GST compliance and financial discipline.</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="chapter12.html" class="nav-link">← Previous Chapter: E-Way Bill</a>
+            <a href="chapter14.html" class="nav-link">Next Chapter: TDS and TCS under GST →</a>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <h3 class="footer-title">Tax Gurukul - Chapter 13: Payment of Tax</h3>
+                <p class="footer-text">© 2023 Tax Gurukul by Anil Kumar VT. All rights reserved.</p>
+                <p class="footer-text">Designed for clear understanding of GST concepts for all learners.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

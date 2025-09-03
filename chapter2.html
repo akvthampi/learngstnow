@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Supply under GST - Tax Gurukul</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+            color: #333;
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(90deg, #4ecdc4 0%, #88d8d0 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .chapter-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, #45b7d1, #7ac5dd);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .chapter-content {
+            background: white;
+            border-radius: 0;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #4ecdc4;
+            font-size: 2.2rem;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #45b7d1;
+        }
+
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            color: #2e86de;
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        ul, ol {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #444;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 6px solid #2196f3;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .key-points h3 {
+            color: #0d47a1;
+            margin-top: 0;
+        }
+
+        .key-points ul {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background-color: #fff3e0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #e65100;
+        }
+
+        .supply-definition {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left: 6px solid #9c27b0;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .supply-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .supply-type-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #96ceb4;
+        }
+
+        .supply-type-card h4 {
+            color: #2e7d32;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .supply-type-card p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(45deg, #4ecdc4, #88d8d0);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(90deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            margin-top: 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .chapter-title {
+                font-size: 2.2rem;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .chapter-content {
+                padding: 25px;
+            }
+            
+            p, ul, ol {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .supply-types {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> > Chapter 2: Supply under GST
+                </div>
+                <h1 class="chapter-title">Chapter 2: Supply under GST</h1>
+                <p class="chapter-subtitle">Understanding the Concept and Types of Supply under GST Law</p>
+            </div>
+        </header>
+
+        <div class="navigation">
+            <a href="chapter1.html" class="nav-link">← Previous Chapter: Introduction to GST</a>
+            <a href="chapter3.html" class="nav-link">Next Chapter: Charge of GST →</a>
+        </div>
+
+        <div class="content-container">
+            <div class="chapter-content">
+                <h2>Concept of Supply</h2>
+                <p>The term <span class="highlight">"supply"</span> is the most fundamental concept in GST law. It is the foundation on which the entire GST structure is built. Under GST, almost all transactions involving goods and services are considered as supply and are therefore liable to tax.</p>
+                
+                <div class="supply-definition">
+                    <h3>Definition of Supply</h3>
+                    <p>As per Section 7 of the CGST Act, 2017, supply includes all forms of supply of goods and/or services such as sale, transfer, barter, exchange, license, rental, lease or disposal made or agreed to be made for a consideration by a person in the course or furtherance of business.</p>
+                </div>
+
+                <h2>Essential Elements of Supply</h2>
+                <p>For a transaction to qualify as supply under GST, it must satisfy the following essential elements:</p>
+                <ul>
+                    <li><strong>Supply of Goods and/or Services:</strong> The transaction must involve either goods, services, or both</li>
+                    <li><strong>For Consideration:</strong> There must be a consideration (payment) involved, unless specifically exempted</li>
+                    <li><strong>In the Course or Furtherance of Business:</strong> The activity must be related to business operations</li>
+                    <li><strong>Made by a Taxable Person:</strong> The supplier must be a registered person under GST</li>
+                    <li><strong>In the Taxable Territory:</strong> The supply must take place within the taxable territory of India</li>
+                </ul>
+
+                <h2>Types of Supply</h2>
+                <p>Supply under GST can be broadly classified into various categories based on different criteria:</p>
+                
+                <div class="supply-types">
+                    <div class="supply-type-card">
+                        <h4>Taxable Supply</h4>
+                        <p>Supplies that are chargeable to GST at the applicable rates. These include most commercial transactions of goods and services.</p>
+                    </div>
+                    
+                    <div class="supply-type-card">
+                        <h4>Exempt Supply</h4>
+                        <p>Supplies that are either nil rated or wholly exempt from GST. No tax is payable on such supplies.</p>
+                    </div>
+                    
+                    <div class="supply-type-card">
+                        <h4>Zero Rated Supply</h4>
+                        <p>Supplies on which no tax is payable but input tax credit can be claimed. Includes exports and supplies to SEZ.</p>
+                    </div>
+                </div>
+
+                <h2>Classification Based on Nature</h2>
+                
+                <h3>1. Goods Supply</h3>
+                <p>Supply involving tangible movable property. Examples include sale of products, machinery, vehicles, etc.</p>
+                
+                <h3>2. Services Supply</h3>
+                <p>Supply involving intangible benefits or facilities. Examples include consultancy, transportation, banking services, etc.</p>
+                
+                <h3>3. Composite Supply</h3>
+                <p>A supply consisting of two or more taxable supplies of goods or services which are naturally bundled and supplied in conjunction with each other. One of these supplies is the principal supply.</p>
+                
+                <h3>4. Mixed Supply</h3>
+                <p>Two or more individual supplies of goods or services made in conjunction with each other by a taxable person for a single price where such supply does not constitute a composite supply.</p>
+
+                <h2>Classification Based on Territory</h2>
+                
+                <h3>Intra-State Supply</h3>
+                <p>Supply where the location of the supplier and the place of supply are in the same state or union territory. Subject to CGST and SGST/UTGST.</p>
+                
+                <h3>Inter-State Supply</h3>
+                <p>Supply where the location of the supplier and the place of supply are in different states or union territories. Subject to IGST.</p>
+
+                <div class="key-points">
+                    <h3>Important Points to Remember</h3>
+                    <ul>
+                        <li>Supply is the <span class="highlight">core concept</span> of GST law</li>
+                        <li>All supplies are taxable unless specifically <span class="highlight">exempted</span></li>
+                        <li>Consideration is generally required for a transaction to be considered as supply</li>
+                        <li>Business activities are the primary focus of GST supply provisions</li>
+                        <li>Different tax treatments apply to <span class="highlight">intra-state</span> and <span class="highlight">inter-state</span> supplies</li>
+                        <li><span class="highlight">Composite</span> and <span class="highlight">mixed</span> supplies have different tax implications</li>
+                    </ul>
+                </div>
+
+                <h2>Activities Deemed as Supply</h2>
+                <p>Certain activities are specifically deemed as supply even in the absence of consideration:</p>
+                <ul>
+                    <li>Permanent transfer or disposal of business assets where input tax credit has been availed</li>
+                    <li>Supply of goods or services between related persons</li>
+                    <li>Supply of goods or services by any agent who is authorized to do so</li>
+                    <li>Import of services for consideration whether or not in the course or furtherance of business</li>
+                    <li>Activities specified in Schedule I of the CGST Act</li>
+                </ul>
+
+                <h2>Activities Not Treated as Supply</h2>
+                <p>Certain activities are specifically excluded from the definition of supply:</p>
+                <ul>
+                    <li>Services by an employee to the employer in the course of employment</li>
+                    <li>Services of funeral, burial, crematorium or mortuary</li>
+                    <li>Sale of land (not buildings)</li>
+                    <li>Transactions specified in Schedule III of the CGST Act</li>
+                    <li>Activities undertaken by the government as public authority</li>
+                </ul>
+
+                <h2>Comparison: Composite vs Mixed Supply</h2>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Composite Supply</th>
+                        <th>Mixed Supply</th>
+                    </tr>
+                    <tr>
+                        <td>Definition</td>
+                        <td>Naturally bundled supplies</td>
+                        <td>Individually distinct supplies</td>
+                    </tr>
+                    <tr>
+                        <td>Relationship</td>
+                        <td>Supplies are naturally connected</td>
+                        <td>Supplies are independent</td>
+                    </tr>
+                    <tr>
+                        <td>Tax Treatment</td>
+                        <td>Tax rate of principal supply applies</td>
+                        <td>Highest tax rate among supplies applies</td>
+                    </tr>
+                    <tr>
+                        <td>Example</td>
+                        <td>AC with installation service</td>
+                        <td>Gift pack with different items</td>
+                    </tr>
+                </table>
+
+                <h2>Time of Supply</h2>
+                <p>The time when a supply is deemed to have taken place is crucial for determining the liability to pay GST:</p>
+                <ul>
+                    <li>For goods: Earlier of receipt of payment or issue of invoice</li>
+                    <li>For services: Earlier of receipt of payment or completion of service</li>
+                    <li>Special rules apply for continuous supply of services</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Understanding the concept of supply is fundamental to mastering GST. It determines what transactions are taxable, the applicable tax rates, and the time when tax liability arises. Businesses must carefully analyze their transactions to determine if they constitute supply under GST and apply the appropriate tax treatment. The classification of supplies into various categories helps in proper compliance and ensures that the right amount of tax is collected and remitted to the government.</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="chapter1.html" class="nav-link">← Previous Chapter: Introduction to GST</a>
+            <a href="chapter3.html" class="nav-link">Next Chapter: Charge of GST →</a>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <h3 class="footer-title">Tax Gurukul - Chapter 2: Supply under GST</h3>
+                <p class="footer-text">© 2023 Tax Gurukul by Anil Kumar VT. All rights reserved.</p>
+                <p class="footer-text">Designed for clear understanding of GST concepts for all learners.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

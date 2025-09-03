@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 14: TDS and TCS under GST - Tax Gurukul</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+            color: #333;
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(90deg, #2e86de 0%, #68a5f0 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .chapter-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, #8395a7, #a5b6c8);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .chapter-content {
+            background: white;
+            border-radius: 0;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #2e86de;
+            font-size: 2.2rem;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #8395a7;
+        }
+
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            color: #34495e;
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        ul, ol {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #444;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 6px solid #4caf50;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .key-points h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+
+        .key-points ul {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background-color: #e3f2fd;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        .tds-definition {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left: 6px solid #9c27b0;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(45deg, #2e86de, #68a5f0);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        .requirement-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .requirement-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #00d2d3;
+        }
+
+        .requirement-card h4 {
+            color: #00838f;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .requirement-card p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        .examples {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 6px solid #ff9800;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .examples h3 {
+            color: #e65100;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(90deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            margin-top: 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .chapter-title {
+                font-size: 2.2rem;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .chapter-content {
+                padding: 25px;
+            }
+            
+            p, ul, ol {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .requirement-types {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> > Chapter 14: TDS and TCS under GST
+                </div>
+                <h1 class="chapter-title">Chapter 14: TDS and TCS under GST</h1>
+                <p class="chapter-subtitle">Understanding Tax Deducted at Source and Tax Collected at Source</p>
+            </div>
+        </header>
+
+        <div class="navigation">
+            <a href="chapter13.html" class="nav-link">← Previous Chapter: Payment of Tax</a>
+            <a href="chapter15.html" class="nav-link">Next Chapter: GST Returns →</a>
+        </div>
+
+        <div class="content-container">
+            <div class="chapter-content">
+                <h2>Introduction to TDS and TCS under GST</h2>
+                <p><span class="highlight">Tax Deducted at Source (TDS)</span> and <span class="highlight">Tax Collected at Source (TCS)</span> are mechanisms under GST where tax is collected at the point of transaction by designated entities. These provisions ensure better compliance and wider tax base by bringing more entities into the tax net.</p>
+                
+                <div class="tds-definition">
+                    <h3>Definition and Purpose</h3>
+                    <p>TDS and TCS under GST are compliance mechanisms where specified categories of persons deduct or collect tax at prescribed rates from payments made to suppliers or collected from recipients. This ensures timely collection of tax and prevents tax evasion by bringing government departments, PSUs, and e-commerce operators into the tax collection system.</p>
+                </div>
+
+                <h2>Legal Framework</h2>
+                <p>TDS and TCS provisions are governed by Sections 51 and 52 of the CGST Act, 2017:</p>
+                <ul>
+                    <li><strong>Section 51:</strong> Tax deduction at source</li>
+                    <li><strong>Section 52:</strong> Tax collection at source</li>
+                    <li><strong>Section 53:</strong> Furnishing of information by deductor and collector</li>
+                    <li><strong>Section 54:</strong> Refund of tax deducted or collected</li>
+                    <li><strong>Rule 66-71:</strong> Rules related to TDS and TCS under CGST Rules, 2017</li>
+                </ul>
+
+                <div class="key-points">
+                    <h3>Key Points to Remember</h3>
+                    <ul>
+                        <li>TDS @ <span class="highlight">1%</span> (0.5% CGST + 0.5% SGST/UTGST) or <span class="highlight">2%</span> IGST</li>
+                        <li>TCS @ <span class="highlight">1%</span> (0.5% CGST + 0.5% SGST/UTGST) on e-commerce supplies</li>
+                        <li>Threshold of <span class="highlight">₹2.5 lakhs</span> for TDS applicability</li>
+                        <li>Must deposit within <span class="highlight">10 days</span> of next month</li>
+                        <li>Issue <span class="highlight">TDS certificate</span> within 5 days of deduction</li>
+                    </ul>
+                </div>
+
+                <h2>Tax Deducted at Source (TDS)</h2>
+                <p>TDS under GST is deducted by specified entities at the time of making payments to suppliers:</p>
+                
+                <h3>Entities Required to Deduct TDS</h3>
+                <ul>
+                    <li>Departments or establishments of Central or State Government</li>
+                    <li>Local authorities</li>
+                    <li>Governmental agencies</li>
+                    <li>Such persons or categories as may be notified by the GST Council</li>
+                </ul>
+
+                <h2>TDS Rates and Threshold</h2>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Type of Supply</th>
+                        <th>TDS Rate</th>
+                        <th>Threshold</th>
+                    </tr>
+                    <tr>
+                        <td>Intra-State Supply</td>
+                        <td>1% (0.5% CGST + 0.5% SGST/UTGST)</td>
+                        <td>₹2.5 lakhs</td>
+                    </tr>
+                    <tr>
+                        <td>Inter-State Supply</td>
+                        <td>2% IGST</td>
+                        <td>₹2.5 lakhs</td>
+                    </tr>
+                </table>
+
+                <h2>TDS Process and Requirements</h2>
+                <div class="requirement-types">
+                    <div class="requirement-card">
+                        <h4>Registration</h4>
+                        <p>Entities required to deduct TDS must obtain separate TDS registration with PAN-based GSTIN.</p>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <h4>Deduction</h4>
+                        <p>Deduct tax at prescribed rates when payment exceeds threshold limit to registered suppliers.</p>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <h4>Deposit</h4>
+                        <p>Deposit deducted tax with government within 10 days of the next month through challan.</p>
+                    </div>
+                    
+                    <div class="requirement-card">
+                        <h4>Filing</h4>
+                        <p>File GSTR-7 monthly return and furnish details of TDS deducted and deposited.</p>
+                    </div>
+                </div>
+
+                <h2>Tax Collected at Source (TCS)</h2>
+                <p>TCS under GST is collected by e-commerce operators at the time of supplying goods or services through their platform:</p>
+                
+                <h3>Entities Required to Collect TCS</h3>
+                <ul>
+                    <li>E-commerce operators who facilitate supply of goods or services</li>
+                    <li>Operators of digital platforms facilitating supplies</li>
+                    <li>Marketplace facilitators</li>
+                </ul>
+
+                <h2>TCS Rates and Applicability</h2>
+                <p>TCS is collected at the rate of:</p>
+                <ul>
+                    <li><strong>1%:</strong> 0.5% CGST + 0.5% SGST/UTGST for intra-state supplies</li>
+                    <li><strong>1%:</strong> 1% IGST for inter-state supplies</li>
+                </ul>
+
+                <div class="examples">
+                    <h3>TDS and TCS Scenarios</h3>
+                    <ul>
+                        <li><strong>Government Department:</strong> Central Government department pays ₹5 lakhs to a registered supplier. Deducts TDS @ 2% (₹10,000) on inter-state supply.</li>
+                        <li><strong>E-commerce Operator:</strong> Amazon facilitates sale of ₹1,00,000 worth goods. Collects TCS @ 1% (₹1,000) from customer.</li>
+                        <li><strong>Local Authority:</strong> Municipal corporation pays ₹3 lakhs for construction work. Deducts TDS @ 1% (₹3,000) on intra-state supply.</li>
+                        <li><strong>PSU:</strong> BHEL purchases goods worth ₹4 lakhs. Deducts TDS @ 2% (₹8,000) on inter-state supply.</li>
+                    </ul>
+                </div>
+
+                <h2>TDS and TCS Comparison</h2>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Aspect</th>
+                        <th>TDS (Section 51)</th>
+                        <th>TCS (Section 52)</th>
+                    </tr>
+                    <tr>
+                        <td>Who Deducts/Collects</td>
+                        <td>Government departments, PSUs, local authorities</td>
+                        <td>E-commerce operators</td>
+                    </tr>
+                    <tr>
+                        <td>When Applied</td>
+                        <td>At the time of making payment to supplier</td>
+                        <td>At the time of collecting payment from recipient</td>
+                    </tr>
+                    <tr>
+                        <td>Rate</td>
+                        <td>1% or 2% depending on supply type</td>
+                        <td>1% for both intra and inter-state</td>
+                    </tr>
+                    <tr>
+                        <td>Threshold</td>
+                        <td>₹2.5 lakhs per contract</td>
+                        <td>No threshold limit</td>
+                    </tr>
+                    <tr>
+                        <td>Return Filing</td>
+                        <td>GSTR-7 monthly</td>
+                        <td>GSTR-8 monthly</td>
+                    </tr>
+                </table>
+
+                <h2>Compliance Requirements</h2>
+                <p>Both TDS and TCS deductors/collectors must comply with:</p>
+                <ul>
+                    <li>Obtain separate registration for TDS/TCS activities</li>
+                    <li>Deduct/collect tax at prescribed rates and times</li>
+                    <li>Deposit tax with government within prescribed time limits</li>
+                    <li>File monthly returns (GSTR-7 for TDS, GSTR-8 for TCS)</li>
+                    <li>Issue certificates to suppliers/recipients</li>
+                    <li>Maintain proper records and accounts</li>
+                </ul>
+
+                <h2>Certificates and Documentation</h2>
+                <p>Proper documentation is essential for TDS and TCS compliance:</p>
+                    <ul>
+                        <li><strong>TDS Certificate:</strong> Form GSTR-7A issued within 5 days of deduction</li>
+                        <li><strong>TCS Certificate:</strong> Form GSTR-8A issued within 5 days of collection</li>
+                        <li><strong>Payment Challan:</strong> CPIN generated for tax deposit</li>
+                        <li><strong>Return Filing:</strong> Monthly returns with details of deduction/collection</li>
+                        <li><strong>Record Maintenance:</strong> Proper books of accounts for all transactions</li>
+                    </ul>
+
+                <h2>Input Tax Credit for TDS/TCS</h2>
+                <p>Suppliers and recipients can claim credit for TDS/TCS:</p>
+                    <ul>
+                        <li>TDS amount reflected in Form GSTR-7A is eligible for ITC</li>
+                        <li>TCS amount reflected in Form GSTR-8A is eligible for ITC</li>
+                        <li>Credit automatically populated in electronic credit ledger</li>
+                        <li>Matching with deductor/collector returns required</li>
+                        <li>Mismatch results in ITC reversal</li>
+                    </ul>
+
+                <h2>Common Compliance Issues</h2>
+                <p>Entities commonly face these TDS/TCS challenges:</p>
+                <ul>
+                    <li>Delay in obtaining separate TDS/TCS registration</li>
+                    <li>Incorrect calculation of TDS/TCS amounts</li>
+                    <li>Delay in depositing deducted/collected tax</li>
+                    <li>Non-issuance of certificates within prescribed time</li>
+                    <li>Errors in return filing and reconciliation</li>
+                </ul>
+
+                <h2>Recent Amendments and Updates</h2>
+                <p>The GST Council has made several updates to TDS/TCS provisions:</p>
+                <ul>
+                    <li>Simplified registration process for TDS deductors</li>
+                    <li>Enhanced auto-population in returns</li>
+                    <li>Special provisions for small e-commerce operators</li>
+                    <li>Improved certificate generation mechanisms</li>
+                    <li>Streamlined refund processes for excess deduction</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>TDS and TCS provisions under GST are important compliance mechanisms that expand the tax base and ensure better tax collection. Understanding the requirements, rates, and procedures for both deductors and collectors is essential for proper compliance. Regular training on TDS/TCS provisions, implementation of systematic processes, and timely filing of returns help entities meet their obligations efficiently. The mechanisms not only aid government revenue collection but also provide legitimate ITC benefits to suppliers and recipients, making them integral to the GST ecosystem.</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="chapter13.html" class="nav-link">← Previous Chapter: Payment of Tax</a>
+            <a href="chapter15.html" class="nav-link">Next Chapter: GST Returns →</a>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <h3 class="footer-title">Tax Gurukul - Chapter 14: TDS and TCS under GST</h3>
+                <p class="footer-text">© 2023 Tax Gurukul by Anil Kumar VT. All rights reserved.</p>
+                <p class="footer-text">Designed for clear understanding of GST concepts for all learners.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

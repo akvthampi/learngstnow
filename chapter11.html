@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11: Accounts and Records - Tax Gurukul</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+            color: #333;
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(90deg, #10ac84 0%, #3dd9b3 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .chapter-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, #ee5a24, #f3815d);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .chapter-content {
+            background: white;
+            border-radius: 0;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #10ac84;
+            font-size: 2.2rem;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ee5a24;
+        }
+
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            color: #d84315;
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        ul, ol {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #444;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            border-left: 6px solid #ec407a;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .key-points h3 {
+            color: #880e4f;
+            margin-top: 0;
+        }
+
+        .key-points ul {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background-color: #e8f5e9;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #2e7d32;
+        }
+
+        .accounts-definition {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 6px solid #ff9800;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .record-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .record-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #0abde3;
+        }
+
+        .record-card h4 {
+            color: #0277bd;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .record-card p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        .requirements {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 6px solid #2196f3;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .requirements h3 {
+            color: #0d47a1;
+        }
+
+        .examples {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left: 6px solid #9c27b0;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .examples h3 {
+            color: #4a148c;
+        }
+
+        .rules-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 1.1rem;
+        }
+
+        .rules-table th {
+            background: linear-gradient(45deg, #10ac84, #3dd9b3);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .rules-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .rules-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        .rules-table tr:hover {
+            background-color: #e8f5e9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(90deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            margin-top: 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .chapter-title {
+                font-size: 2.2rem;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .chapter-content {
+                padding: 25px;
+            }
+            
+            p, ul, ol {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .record-types {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> > Chapter 11: Accounts and Records
+                </div>
+                <h1 class="chapter-title">Chapter 11: Accounts and Records</h1>
+                <p class="chapter-subtitle">Understanding GST Record Keeping Requirements</p>
+            </div>
+        </header>
+
+        <div class="navigation">
+            <a href="chapter10.html" class="nav-link">← Previous Chapter: Tax Invoice, Credit Notes and Debit Notes</a>
+            <a href="chapter12.html" class="nav-link">Next Chapter: E-Way Bill →</a>
+        </div>
+
+        <div class="content-container">
+            <div class="chapter-content">
+                <h2>Introduction to Accounts and Records</h2>
+                <p><span class="highlight">Accounts and records</span> form the foundation of GST compliance and are essential for accurate tax reporting, audit requirements, and verification by tax authorities. Proper maintenance of books of accounts ensures transparency and facilitates smooth business operations under the GST regime.</p>
+                
+                <div class="accounts-definition">
+                    <h3>Definition and Importance</h3>
+                    <p>Accounts and records under GST refer to the systematic documentation of all financial transactions, tax-related activities, and business operations that enable accurate computation of tax liability, input tax credit claims, and compliance with statutory requirements. They serve as evidence during audits and inspections.</p>
+                </div>
+
+                <h2>Legal Framework</h2>
+                <p>Account and record requirements are governed by Sections 37 to 44 of the CGST Act, 2017:</p>
+                <ul>
+                    <li><strong>Section 37:</strong> Accounts and records to be kept by registered person</li>
+                    <li><strong>Section 38:</strong> Furnishing details of outward supplies</li>
+                    <li><strong>Section 39:</strong> Furnishing details of inward supplies</li>
+                    <li><strong>Section 40:</strong> Furnishing information regarding imports</li>
+                    <li><strong>Section 41:</strong> Furnishing information regarding exports</li>
+                    <li><strong>Section 42:</strong> Matching, reversal, and reclaim of input tax credit</li>
+                    <li><strong>Section 43:</strong> Accounts and records to be kept by Input Service Distributor</li>
+                    <li><strong>Section 44:</strong> Audit</li>
+                </ul>
+
+                <div class="key-points">
+                    <h3>Key Points to Remember</h3>
+                    <ul>
+                        <li><span class="highlight">Mandatory records</span> for all registered persons</li>
+                        <li>Records must be maintained for <span class="highlight">6 years</span></li>
+                        <li>Can be kept in <span class="highlight">electronic format</span></li>
+                        <li><span class="highlight">Proper indexing</span> and <span class="highlight">categorization</span> required</li>
+                        <li>Must be <span class="highlight">readily accessible</span> for inspection</li>
+                    </ul>
+                </div>
+
+                <h2>Mandatory Records for Registered Persons</h2>
+                <p>Registered persons must maintain the following records:</p>
+                <ul>
+                    <li>Production or manufacture of goods</li>
+                    <li>Inward and outward supply of goods or services</li>
+                    <li>Stock of goods</li>
+                    <li>Input tax credit availed</li>
+                    <li>Output tax payable and paid</li>
+                    <li>Goods or services supplied on behalf of principals</li>
+                    <li>Accounts of purchases, sales, income, and expenditure</li>
+                    <li>Tax invoices, credit notes, debit notes, and other documents</li>
+                </ul>
+
+                <h2>Types of Records</h2>
+                <div class="record-types">
+                    <div class="record-card">
+                        <h4>Financial Records</h4>
+                        <p>Books of accounts including cash book, ledger, journal, and trial balance showing all financial transactions related to business operations.</p>
+                    </div>
+                    
+                    <div class="record-card">
+                        <h4>Tax Records</h4>
+                        <p>Records of tax invoices, credit/debit notes, tax payments, ITC claims, and GST returns filed with tax authorities.</p>
+                    </div>
+                    
+                    <div class="record-card">
+                        <h4>Inventory Records</h4>
+                        <p>Stock registers, purchase registers, sales registers, and records of goods sent for job work or received from job workers.</p>
+                    </div>
+                    
+                    <div class="record-card">
+                        <h4>Supporting Documents</h4>
+                        <p>Contracts, agreements, correspondence, and other documents supporting business transactions and tax computations.</p>
+                    </div>
+                </div>
+
+                <div class="requirements">
+                    <h3>Record Keeping Requirements</h3>
+                    <ul>
+                        <li><strong>True and Correct:</strong> Records must accurately reflect business transactions</li>
+                        <li><strong>Systematic Manner:</strong> Proper classification and indexing required</li>
+                        <li><strong>Regular Updates:</strong> Records must be maintained on a regular basis</li>
+                        <li><strong>Accessibility:</strong> Must be readily available for inspection</li>
+                        <li><strong>Retention:</strong> Maintain for 6 years from end of financial year</li>
+                        <li><strong>Language:</strong> Can be maintained in English or regional language</li>
+                    </ul>
+                </div>
+
+                <h2>Special Records for Different Business Types</h2>
+                <table class="rules-table">
+                    <tr>
+                        <th>Business Type</th>
+                        <th>Special Record Requirements</th>
+                    </tr>
+                    <tr>
+                        <td>Manufacturers</td>
+                        <td>Production records, consumption registers, and manufacturing accounts</td>
+                    </tr>
+                    <tr>
+                        <td>Traders</td>
+                        <td>Purchase and sales registers, stock registers, and delivery challans</td>
+                    </tr>
+                    <tr>
+                        <td>Service Providers</td>
+                        <td>Service registers, client-wise records, and service completion certificates</td>
+                    </tr>
+                    <tr>
+                        <td>E-commerce Operators</td>
+                        <td>Supplier details, transaction records, and TCS collection records</td>
+                    </tr>
+                    <tr>
+                        <td>Input Service Distributors</td>
+                        <td>Distribution registers and allocation records</td>
+                    </tr>
+                </table>
+
+                <h2>Electronic Record Keeping</h2>
+                <p>Records can be maintained in electronic format with specific requirements:</p>
+                    <ul>
+                        <li>Proper indexing and search capabilities</li>
+                        <li>Regular backups and data security</li>
+                        <li>Readily producible in physical form if required</li>
+                        <li>Compatible with GST portal requirements</li>
+                        <li>Proper access controls and audit trails</li>
+                    </ul>
+
+                <div class="examples">
+                    <h3>Record Keeping Scenarios</h3>
+                    <ul>
+                        <li><strong>Manufacturer:</strong> Maintains production records, raw material consumption, finished goods stock, and job work records.</li>
+                        <li><strong>Trader:</strong> Keeps purchase register, sales register, stock register, and delivery challans for all transactions.</li>
+                        <li><strong>Service Provider:</strong> Maintains service register, client-wise records, and supporting documents for services rendered.</li>
+                        <li><strong>E-commerce Operator:</strong> Keeps supplier database, transaction records, and TCS collection details.</li>
+                    </ul>
+                </div>
+
+                <h2>Job Work Related Records</h2>
+                <p>Special records required for job work arrangements:</p>
+                    <ul>
+                        <li>Records of goods sent for job work</li>
+                        <li>Records of goods received back from job worker</li>
+                        <li>Job work agreements and contracts</li>
+                        <li>Challans for goods movement</li>
+                        <li>Payment records to job workers</li>
+                    </ul>
+
+                <h2>Input Service Distributor Records</h2>
+                <p>ISD must maintain specific records:</p>
+                    <ul>
+                        <li>Records of input services received</li>
+                        <li>Distribution registers</li>
+                        <li>Allocation basis documentation</li>
+                        <li>Recipient-wise distribution details</li>
+                        <li>Supporting calculation sheets</li>
+                    </ul>
+
+                <h2>Audit and Inspection Requirements</h2>
+                <p>Records must be prepared for audit and inspection:</p>
+                    <ul>
+                        <li>Ready accessibility during audit</li>
+                        <li>Proper documentation for all transactions</li>
+                        <li>Supporting evidence for tax computations</li>
+                        <li>Reconciliation of books with returns</li>
+                        <li>Proper authorization and approval records</li>
+                    </ul>
+
+                <h2>Common Record Keeping Issues</h2>
+                <p>Businesses commonly face these record keeping challenges:</p>
+                <ul>
+                    <li>Inadequate record maintenance systems</li>
+                    <li>Improper classification of transactions</li>
+                    <li>Lack of proper indexing and retrieval systems</li>
+                    <li>Insufficient backup and data security</li>
+                    <li>Non-compliance with retention requirements</li>
+                </ul>
+
+                <h2>Recent Amendments and Updates</h2>
+                <p>The GST Council has made several updates to record keeping requirements:</p>
+                <ul>
+                    <li>Simplified record keeping for small businesses</li>
+                    <li>Enhanced electronic record capabilities</li>
+                    <li>Special provisions for e-commerce records</li>
+                    <li>Improved audit trail requirements</li>
+                    <li>Streamlined job work documentation</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Proper maintenance of accounts and records is fundamental to GST compliance and business transparency. Understanding the mandatory requirements, maintaining systematic records, and ensuring proper documentation help businesses avoid compliance issues and facilitate smooth operations. Regular training on record keeping requirements, implementation of appropriate systems, and periodic reviews ensure that businesses meet all statutory obligations. Well-maintained records not only help in audit preparedness but also enable better business decision-making through accurate financial information.</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="chapter10.html" class="nav-link">← Previous Chapter: Tax Invoice, Credit Notes and Debit Notes</a>
+            <a href="chapter12.html" class="nav-link">Next Chapter: E-Way Bill →</a>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <h3 class="footer-title">Tax Gurukul - Chapter 11: Accounts and Records</h3>
+                <p class="footer-text">© 2023 Tax Gurukul by Anil Kumar VT. All rights reserved.</p>
+                <p class="footer-text">Designed for clear understanding of GST concepts for all learners.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

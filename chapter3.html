@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Charge of GST - Tax Gurukul</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+            color: #333;
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(90deg, #45b7d1 0%, #7ac5dd 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .chapter-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .chapter-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, #96ceb4, #b5e1cd);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .chapter-content {
+            background: white;
+            border-radius: 0;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #45b7d1;
+            font-size: 2.2rem;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #96ceb4;
+        }
+
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            color: #2e86de;
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        ul, ol {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #444;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 6px solid #4caf50;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .key-points h3 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+
+        .key-points ul {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background-color: #fff8e1;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #ff6f00;
+        }
+
+        .charge-definition {
+            background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+            border-left: 6px solid #039be5;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .tax-structure {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .tax-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #feca57;
+        }
+
+        .tax-card h4 {
+            color: #ff8f00;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .tax-card p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        .examples {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            border-left: 6px solid #ec407a;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .examples h3 {
+            color: #880e4f;
+        }
+
+        .examples ul {
+            margin-bottom: 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(45deg, #45b7d1, #7ac5dd);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #e1f5fe;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(90deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            margin-top: 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .chapter-title {
+                font-size: 2.2rem;
+            }
+            
+            .chapter-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .chapter-content {
+                padding: 25px;
+            }
+            
+            p, ul, ol {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .tax-structure {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> > Chapter 3: Charge of GST
+                </div>
+                <h1 class="chapter-title">Chapter 3: Charge of GST</h1>
+                <p class="chapter-subtitle">Understanding When and How GST is Levied on Supplies</p>
+            </div>
+        </header>
+
+        <div class="navigation">
+            <a href="chapter2.html" class="nav-link">← Previous Chapter: Supply under GST</a>
+            <a href="chapter4.html" class="nav-link">Next Chapter: Place of Supply →</a>
+        </div>
+
+        <div class="content-container">
+            <div class="chapter-content">
+                <h2>Introduction to Charge of GST</h2>
+                <p>The <span class="highlight">charge of GST</span> refers to the legal provision that imposes the liability to pay Goods and Services Tax on taxable supplies. Understanding when and how GST is charged is crucial for businesses to comply with tax obligations and for consumers to understand the tax implications of their purchases.</p>
+                
+                <div class="charge-definition">
+                    <h3>Legal Framework</h3>
+                    <p>Section 9 of the CGST Act, 2017 provides for the levy and collection of tax on intra-State supply of goods or services or both by the Central Government. Similarly, Section 9 of the respective SGST/UTGST Acts provide for the levy by the State/UT Governments. For inter-State supplies, IGST is levied under Section 5 of the IGST Act, 2017.</p>
+                </div>
+
+                <h2>When GST is Charged</h2>
+                <p>GST is charged on all taxable supplies of goods and/or services made in the course or furtherance of business, subject to certain exceptions. The charge of GST occurs at the time of supply, which is determined based on specific provisions in the law.</p>
+                
+                <h3>Essential Conditions for Charge of GST</h3>
+                <ul>
+                    <li><strong>Taxable Supply:</strong> The supply must be a taxable supply (not exempt or zero-rated)</li>
+                    <li><strong>In the Course of Business:</strong> The supply must be made in the course or furtherance of business</li>
+                    <li><strong>Within Taxable Territory:</strong> The supply must be made within the taxable territory of India</li>
+                    <li><strong>By a Taxable Person:</strong> The supplier must be a registered person under GST</li>
+                </ul>
+
+                <h2>Types of GST Charged</h2>
+                <p>The type of GST charged depends on the nature of the supply and the location of the supplier and recipient:</p>
+                
+                <div class="tax-structure">
+                    <div class="tax-card">
+                        <h4>CGST (Central GST)</h4>
+                        <p>Levied by the Central Government on intra-State supplies of goods and services. Collected along with SGST/UTGST.</p>
+                    </div>
+                    
+                    <div class="tax-card">
+                        <h4>SGST (State GST)</h4>
+                        <p>Levied by the State Government on intra-State supplies of goods and services. Collected along with CGST.</p>
+                    </div>
+                    
+                    <div class="tax-card">
+                        <h4>UTGST (Union Territory GST)</h4>
+                        <p>Levied by the Union Territory administration on intra-UT supplies of goods and services.</p>
+                    </div>
+                    
+                    <div class="tax-card">
+                        <h4>IGST (Integrated GST)</h4>
+                        <p>Levied by the Central Government on inter-State supplies and imports. Also applicable for supplies to/from SEZs.</p>
+                    </div>
+                </div>
+
+                <h2>GST Rates and Slabs</h2>
+                <p>GST is levied at different rates depending on the nature of goods and services:</p>
+                <ul>
+                    <li><strong>0%:</strong> Essential items (food grains, books, newspapers, etc.)</li>
+                    <li><strong>5%:</strong> Common use items (spices, tea, medicines, etc.)</li>
+                    <li><strong>12%:</strong> Processed foods, business class airline tickets, etc.</li>
+                    <li><strong>18%:</strong> Capital goods, IT services, telecom services, etc.</li>
+                    <li><strong>28%:</strong> Luxury items, cars, tobacco products, etc.</li>
+                </ul>
+
+                <div class="key-points">
+                    <h3>Key Points to Remember</h3>
+                    <ul>
+                        <li>GST is charged on <span class="highlight">taxable supplies</span> made in the course of business</li>
+                        <li>Different types of GST (CGST, SGST, IGST) apply based on <span class="highlight">supply nature</span></li>
+                        <li>GST rates vary from <span class="highlight">0% to 28%</span> based on the category of goods/services</li>
+                        <li>The charge of GST is <span class="highlight">mandatory</span> for all taxable supplies unless specifically exempted</li>
+                        <li>GST is a <span class="highlight">destination-based tax</span> levied at the point of consumption</li>
+                    </ul>
+                </div>
+
+                <h2>Exemptions from GST Charge</h2>
+                <p>Certain supplies are exempt from the charge of GST:</p>
+                <ul>
+                    <li>Supplies specified in Schedule III of the CGST Act (services by employees, funeral services, etc.)</li>
+                    <li>Supplies below the threshold limit (₹40 lakhs for goods, ₹20 lakhs for services in special category states)</li>
+                    <li>Supplies specifically exempted through notifications by the GST Council</li>
+                    <li>Supplies to SEZ units under Letter of Undertaking without payment of tax</li>
+                </ul>
+
+                <h2>Composite Scheme and GST Charge</h2>
+                <p>Under the Composition Scheme, small taxpayers pay tax at a concessional rate:</p>
+                <ul>
+                    <li><strong>Manufacturers:</strong> 1% (0.5% CGST + 0.5% SGST/UTGST)</li>
+                    <li><strong>Restaurants (not serving alcohol):</strong> 5% (2.5% CGST + 2.5% SGST/UTGST)</li>
+                    <li><strong>Other Suppliers:</strong> 1% (0.5% CGST + 0.5% SGST/UTGST)</li>
+                </ul>
+
+                <div class="examples">
+                    <h3>Practical Examples</h3>
+                    <ul>
+                        <li><strong>Intra-State Sale:</strong> A Delhi dealer sells goods worth ₹1,00,000 to another Delhi dealer at 18% GST. GST charged: CGST ₹9,000 + SGST ₹9,000 = ₹18,000</li>
+                        <li><strong>Inter-State Sale:</strong> A Mumbai dealer sells goods worth ₹1,00,000 to a Chennai dealer at 18% GST. GST charged: IGST ₹18,000</li>
+                        <li><strong>Composite Dealer:</strong> A manufacturer with turnover ₹80 lakhs sells goods worth ₹50,000. GST charged: 1% of ₹50,000 = ₹500 (₹250 CGST + ₹250 SGST)</li>
+                    </ul>
+                </div>
+
+                <h2>Time of Charge</h2>
+                <p>The charge of GST occurs at the time of supply, which is determined as follows:</p>
+                <ul>
+                    <li><strong>For Goods:</strong> Earlier of receipt of payment or issue of invoice</li>
+                    <li><strong>For Services:</strong> Earlier of receipt of payment or completion of service</li>
+                    <li><strong>Special Cases:</strong> Continuous supply, reverse charge mechanism, etc. have specific rules</li>
+                </ul>
+
+                <h2>Reverse Charge Mechanism</h2>
+                <p>In certain cases, the liability to pay GST shifts from the supplier to the recipient:</p>
+                    <ul>
+                        <li>Supplies from unregistered persons to registered persons (above threshold)</li>
+                        <li>Imports of goods and services</li>
+                        <li>Specified services notified by the government</li>
+                        <li>Supplies through e-commerce operators in certain cases</li>
+                    </ul>
+
+                <h2>Collection and Remittance</h2>
+                <p>Once GST is charged, it must be collected from the recipient and remitted to the government:</p>
+                <ol>
+                    <li><strong>Collection:</strong> GST is collected at the time of supply along with the consideration</li>
+                    <li><strong>Accounting:</strong> GST collected is maintained in separate accounts</li>
+                    <li><strong>Remittance:</strong> GST must be deposited with the government within prescribed time limits</li>
+                    <li><strong>Reporting:</strong> Details of GST collected must be reported in GST returns</li>
+                </ol>
+
+                <h2>Penalties for Non-Compliance</h2>
+                <p>Failure to charge or collect GST properly can result in penalties:</p>
+                <ul>
+                    <li>Interest on delayed payment of tax @ 18% per annum</li>
+                    <li>Late fee for delayed filing of returns</li>
+                    <li>Penalty for fraud or wilful misstatement</li>
+                    <li>Prosecution in cases of serious violations</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>The charge of GST is a fundamental aspect of the GST law that determines when and how tax liability arises. Businesses must understand the conditions under which GST is charged, the applicable rates, and the correct type of GST to be levied based on the nature of supply. Proper compliance with GST charging provisions ensures legal compliance and helps maintain the integrity of the tax system. Understanding these provisions is essential for accurate tax calculation, timely payment, and successful business operations under the GST regime.</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="chapter2.html" class="nav-link">← Previous Chapter: Supply under GST</a>
+            <a href="chapter4.html" class="nav-link">Next Chapter: Place of Supply →</a>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <h3 class="footer-title">Tax Gurukul - Chapter 3: Charge of GST</h3>
+                <p class="footer-text">© 2023 Tax Gurukul by Anil Kumar VT. All rights reserved.</p>
+                <p class="footer-text">Designed for clear understanding of GST concepts for all learners.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
