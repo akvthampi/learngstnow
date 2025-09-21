@@ -3,13 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive GST learning resource by Anil Kumar VT. Learn about Goods and Services Tax in India from basic principles to advanced applications.">
     <title>Tax Gurukul - GST Learning Resource</title>
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Font imports -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Tax Gurukul",
+      "description": "Comprehensive GST learning resource",
+      "author": {
+        "@type": "Person",
+        "name": "Anil Kumar VT"
+      },
+      "datePublished": "2023-01-01"
+    }
+    </script>
+    
     <style>
+        :root {
+            /* Color variables */
+            --primary-gradient: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
+            --footer-gradient: linear-gradient(90deg, #2c3e50 0%, #4a6491 100%);
+            --logo-gradient: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 100%);
+            --chapter-1: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            --chapter-2: linear-gradient(45deg, #4ecdc4, #88d8d0);
+            --chapter-3: linear-gradient(45deg, #45b7d1, #7ac5dd);
+            --chapter-4: linear-gradient(45deg, #96ceb4, #b5e1cd);
+            --chapter-5: linear-gradient(45deg, #feca57, #fedd8e);
+            --chapter-6: linear-gradient(45deg, #ff9ff3, #ffbee3);
+            --chapter-7: linear-gradient(45deg, #54a0ff, #82b8ff);
+            --chapter-8: linear-gradient(45deg, #5f27cd, #8a63e5);
+            --chapter-9: linear-gradient(45deg, #00d2d3, #4dd9d9);
+            --chapter-10: linear-gradient(45deg, #ff9f43, #ffb976);
+            --chapter-11: linear-gradient(45deg, #10ac84, #3dd9b3);
+            --chapter-12: linear-gradient(45deg, #ee5a24, #f3815d);
+            --chapter-13: linear-gradient(45deg, #0abde3, #54c7f0);
+            --chapter-14: linear-gradient(45deg, #2e86de, #68a5f0);
+            --chapter-15: linear-gradient(45deg, #8395a7, #a5b6c8);
+            
+            /* Spacing variables */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            
+            /* Font sizes */
+            --text-sm: 1rem;
+            --text-base: 1.2rem;
+            --text-lg: 1.5rem;
+            --text-xl: 1.8rem;
+            --text-2xl: 2.2rem;
+            --text-3xl: 2.5rem;
+            --text-4xl: 3rem;
+            --text-5xl: 4rem;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
         }
 
         body {
@@ -18,8 +96,6 @@
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
-            padding: 0;
-            margin: 0;
         }
 
         .container {
@@ -31,9 +107,9 @@
 
         header {
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
-            margin-bottom: 30px;
+            padding: var(--space-xl) var(--space-lg);
+            background: var(--primary-gradient);
+            margin-bottom: var(--space-lg);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             color: white;
         }
@@ -42,14 +118,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 30px;
-            margin-bottom: 25px;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-md);
         }
 
         .logo {
             width: 100px;
             height: 100px;
-            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 100%);
+            background: var(--logo-gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -62,35 +138,35 @@
 
         h1 {
             font-family: 'Roboto', sans-serif;
-            font-size: 4rem;
+            font-size: var(--text-5xl);
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: var(--space-sm);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .tagline {
-            font-size: 1.8rem;
+            font-size: var(--text-xl);
             font-weight: 300;
-            margin-bottom: 25px;
+            margin-bottom: var(--space-md);
         }
 
         .author {
-            font-size: 1.5rem;
+            font-size: var(--text-lg);
             font-weight: 400;
             background: rgba(255, 255, 255, 0.2);
             display: inline-block;
-            padding: 12px 30px;
+            padding: var(--space-sm) var(--space-lg);
             border-radius: 30px;
         }
 
         .intro {
             text-align: center;
             max-width: 1200px;
-            margin: 0 auto 50px;
-            font-size: 1.4rem;
+            margin: 0 auto var(--space-xl);
+            font-size: var(--text-base);
             color: #555;
             background: white;
-            padding: 35px;
+            padding: var(--space-xl);
             border-radius: 0;
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
             margin-left: auto;
@@ -105,9 +181,9 @@
 
         .chapters-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            padding: 0 20px 50px;
+            grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+            gap: var(--space-lg);
+            padding: 0 var(--space-lg) var(--space-xl);
             width: 100%;
             margin: 0;
         }
@@ -122,19 +198,20 @@
             height: 100%;
         }
 
-        .chapter-card:hover {
+        .chapter-card:hover,
+        .chapter-card:focus-within {
             transform: translateY(-12px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
         }
 
         .chapter-header {
-            padding: 25px;
+            padding: var(--space-md);
             color: white;
             font-weight: 600;
-            font-size: 1.6rem;
+            font-size: var(--text-lg);
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: var(--space-lg);
         }
 
         .chapter-number {
@@ -145,36 +222,39 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: var(--text-xl);
             font-weight: bold;
+            flex-shrink: 0;
         }
 
         .chapter-title {
             flex: 1;
-            font-size: 1.5rem;
+            font-size: var(--text-lg);
         }
 
         .chapter-link {
             display: block;
-            padding: 25px;
+            padding: var(--space-md);
             text-decoration: none;
             color: #444;
-            font-size: 1.3rem;
+            font-size: var(--text-base);
             font-weight: 500;
             transition: background-color 0.3s;
             height: calc(100% - 110px);
         }
 
-        .chapter-link:hover {
+        .chapter-link:hover,
+        .chapter-link:focus {
             background-color: #f8f9ff;
+            outline: none;
         }
 
         footer {
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(90deg, #2c3e50 0%, #4a6491 100%);
+            padding: var(--space-xl) var(--space-lg);
+            background: var(--footer-gradient);
             color: white;
-            margin-top: 30px;
+            margin-top: var(--space-lg);
         }
 
         .footer-content {
@@ -183,14 +263,14 @@
         }
 
         .footer-title {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-lg);
             font-weight: 600;
         }
 
         .footer-text {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
+            font-size: var(--text-base);
+            margin-bottom: var(--space-md);
             opacity: 0.9;
             max-width: 800px;
             margin-left: auto;
@@ -198,60 +278,57 @@
         }
 
         /* Color scheme for chapters */
-        .chapter-1 .chapter-header { background: linear-gradient(45deg, #ff6b6b, #ff8e8e); }
-        .chapter-2 .chapter-header { background: linear-gradient(45deg, #4ecdc4, #88d8d0); }
-        .chapter-3 .chapter-header { background: linear-gradient(45deg, #45b7d1, #7ac5dd); }
-        .chapter-4 .chapter-header { background: linear-gradient(45deg, #96ceb4, #b5e1cd); }
-        .chapter-5 .chapter-header { background: linear-gradient(45deg, #feca57, #fedd8e); }
-        .chapter-6 .chapter-header { background: linear-gradient(45deg, #ff9ff3, #ffbee3); }
-        .chapter-7 .chapter-header { background: linear-gradient(45deg, #54a0ff, #82b8ff); }
-        .chapter-8 .chapter-header { background: linear-gradient(45deg, #5f27cd, #8a63e5); }
-        .chapter-9 .chapter-header { background: linear-gradient(45deg, #00d2d3, #4dd9d9); }
-        .chapter-10 .chapter-header { background: linear-gradient(45deg, #ff9f43, #ffb976); }
-        .chapter-11 .chapter-header { background: linear-gradient(45deg, #10ac84, #3dd9b3); }
-        .chapter-12 .chapter-header { background: linear-gradient(45deg, #ee5a24, #f3815d); }
-        .chapter-13 .chapter-header { background: linear-gradient(45deg, #0abde3, #54c7f0); }
-        .chapter-14 .chapter-header { background: linear-gradient(45deg, #2e86de, #68a5f0); }
-        .chapter-15 .chapter-header { background: linear-gradient(45deg, #8395a7, #a5b6c8); }
+        .chapter-1 .chapter-header { background: var(--chapter-1); }
+        .chapter-2 .chapter-header { background: var(--chapter-2); }
+        .chapter-3 .chapter-header { background: var(--chapter-3); }
+        .chapter-4 .chapter-header { background: var(--chapter-4); }
+        .chapter-5 .chapter-header { background: var(--chapter-5); }
+        .chapter-6 .chapter-header { background: var(--chapter-6); }
+        .chapter-7 .chapter-header { background: var(--chapter-7); }
+        .chapter-8 .chapter-header { background: var(--chapter-8); }
+        .chapter-9 .chapter-header { background: var(--chapter-9); }
+        .chapter-10 .chapter-header { background: var(--chapter-10); }
+        .chapter-11 .chapter-header { background: var(--chapter-11); }
+        .chapter-12 .chapter-header { background: var(--chapter-12); }
+        .chapter-13 .chapter-header { background: var(--chapter-13); }
+        .chapter-14 .chapter-header { background: var(--chapter-14); }
+        .chapter-15 .chapter-header { background: var(--chapter-15); }
 
         @media (max-width: 1200px) {
+            :root {
+                --text-5xl: 3rem;
+                --text-xl: 1.5rem;
+                --text-base: 1.2rem;
+            }
+            
             .chapters-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                padding: 0 15px 40px;
-            }
-            
-            h1 {
-                font-size: 3rem;
-            }
-            
-            .tagline {
-                font-size: 1.5rem;
+                grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+                padding: 0 var(--space-md) var(--space-lg);
             }
             
             .intro {
-                font-size: 1.2rem;
-                padding: 25px;
+                font-size: var(--text-base);
+                padding: var(--space-lg);
             }
         }
 
         @media (max-width: 768px) {
+            :root {
+                --text-5xl: 2.5rem;
+                --text-xl: 1.3rem;
+                --text-lg: 1.4rem;
+                --text-base: 1.1rem;
+            }
+            
             .chapters-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 0 10px 30px;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .tagline {
-                font-size: 1.3rem;
+                gap: var(--space-md);
+                padding: 0 var(--space-sm) var(--space-lg);
             }
             
             .logo-container {
                 flex-direction: column;
-                gap: 20px;
+                gap: var(--space-md);
             }
             
             .logo {
@@ -261,28 +338,47 @@
             }
             
             .chapter-header {
-                padding: 20px;
-                font-size: 1.4rem;
+                padding: var(--space-sm);
+                font-size: var(--text-lg);
             }
             
             .chapter-number {
                 width: 50px;
                 height: 50px;
-                font-size: 1.5rem;
+                font-size: var(--text-lg);
             }
             
             .chapter-link {
-                padding: 20px;
-                font-size: 1.1rem;
+                padding: var(--space-sm);
+                font-size: var(--text-base);
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --text-5xl: 2rem;
+            }
+            
+            .chapter-header {
+                flex-direction: column;
+                text-align: center;
+                gap: var(--space-sm);
+            }
+            
+            .chapter-number {
+                width: 45px;
+                height: 45px;
             }
         }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <div class="container">
-        <header>
+        <header role="banner">
             <div class="logo-container">
-                <div class="logo">GST</div>
+                <div class="logo" aria-label="Tax Gurukul Logo">GST</div>
                 <div>
                     <h1>Tax Gurukul</h1>
                     <p class="tagline">Comprehensive GST Learning Resource</p>
@@ -291,141 +387,153 @@
             </div>
         </header>
 
-        <div class="intro">
-            <p>Welcome to Tax Gurukul, your comprehensive learning resource for Goods and Services Tax (GST) in India. This platform is designed to help you understand GST concepts from basic principles to advanced applications. Navigate through the chapters below to enhance your knowledge of GST.</p>
-        </div>
+        <main id="main-content" tabindex="-1">
+            <section class="intro" aria-labelledby="intro-heading">
+                <h2 id="intro-heading" class="visually-hidden">Introduction</h2>
+                <p>Welcome to Tax Gurukul, your comprehensive learning resource for Goods and Services Tax (GST) in India. This platform is designed to help you understand GST concepts from basic principles to advanced applications. Navigate through the chapters below to enhance your knowledge of GST.</p>
+            </section>
 
-        <div class="chapters-container">
-            <div class="chapters-grid">
-                <div class="chapter-card chapter-1">
-                    <div class="chapter-header">
-                        <div class="chapter-number">1</div>
-                        <div class="chapter-title">Introduction to GST</div>
-                    </div>
-                    <a href="chapter1.html" class="chapter-link">Learn about the fundamentals of GST, its history, and implementation in India</a>
-                </div>
+            <div class="chapters-container">
+                <h2 class="visually-hidden">GST Chapters</h2>
+                <div class="chapters-grid">
+                    <article class="chapter-card chapter-1">
+                        <div class="chapter-header">
+                            <div class="chapter-number">1</div>
+                            <div class="chapter-title">Introduction to GST</div>
+                        </div>
+                        <a href="chapter1.html" class="chapter-link">Learn about the fundamentals of GST, its history, and implementation in India</a>
+                    </article>
 
-                <div class="chapter-card chapter-2">
-                    <div class="chapter-header">
-                        <div class="chapter-number">2</div>
-                        <div class="chapter-title">Supply under GST</div>
-                    </div>
-                    <a href="chapter2.html" class="chapter-link">Understand what constitutes supply under GST law and its various types</a>
-                </div>
+                    <article class="chapter-card chapter-2">
+                        <div class="chapter-header">
+                            <div class="chapter-number">2</div>
+                            <div class="chapter-title">Supply under GST</div>
+                        </div>
+                        <a href="chapter2.html" class="chapter-link">Understand what constitutes supply under GST law and its various types</a>
+                    </article>
 
-                <div class="chapter-card chapter-3">
-                    <div class="chapter-header">
-                        <div class="chapter-number">3</div>
-                        <div class="chapter-title">Charge of GST</div>
-                    </div>
-                    <a href="chapter3.html" class="chapter-link">Learn when and how GST is charged on supplies</a>
-                </div>
+                    <article class="chapter-card chapter-3">
+                        <div class="chapter-header">
+                            <div class="chapter-number">3</div>
+                            <div class="chapter-title">Charge of GST</div>
+                        </div>
+                        <a href="chapter3.html" class="chapter-link">Learn when and how GST is charged on supplies</a>
+                    </article>
 
-                <div class="chapter-card chapter-4">
-                    <div class="chapter-header">
-                        <div class="chapter-number">4</div>
-                        <div class="chapter-title">Place of Supply</div>
-                    </div>
-                    <a href="chapter4.html" class="chapter-link">Determine where a supply is deemed to take place for GST purposes</a>
-                </div>
+                    <article class="chapter-card chapter-4">
+                        <div class="chapter-header">
+                            <div class="chapter-number">4</div>
+                            <div class="chapter-title">Place of Supply</div>
+                        </div>
+                        <a href="chapter4.html" class="chapter-link">Determine where a supply is deemed to take place for GST purposes</a>
+                    </article>
 
-                <div class="chapter-card chapter-5">
-                    <div class="chapter-header">
-                        <div class="chapter-number">5</div>
-                        <div class="chapter-title">Exemptions from GST</div>
-                    </div>
-                    <a href="chapter5.html" class="chapter-link">Explore various exemptions available under GST law</a>
-                </div>
+                    <article class="chapter-card chapter-5">
+                        <div class="chapter-header">
+                            <div class="chapter-number">5</div>
+                            <div class="chapter-title">Exemptions from GST</div>
+                        </div>
+                        <a href="chapter5.html" class="chapter-link">Explore various exemptions available under GST law</a>
+                    </article>
 
-                <div class="chapter-card chapter-6">
-                    <div class="chapter-header">
-                        <div class="chapter-number">6</div>
-                        <div class="chapter-title">Time of Supply</div>
-                    </div>
-                    <a href="chapter6.html" class="chapter-link">Understand when the liability to pay GST arises</a>
-                </div>
+                    <article class="chapter-card chapter-6">
+                        <div class="chapter-header">
+                            <div class="chapter-number">6</div>
+                            <div class="chapter-title">Time of Supply</div>
+                        </div>
+                        <a href="chapter6.html" class="chapter-link">Understand when the liability to pay GST arises</a>
+                    </article>
 
-                <div class="chapter-card chapter-7">
-                    <div class="chapter-header">
-                        <div class="chapter-number">7</div>
-                        <div class="chapter-title">Value of Supply</div>
-                    </div>
-                    <a href="chapter7.html" class="chapter-link">Learn how to determine the taxable value of supplies</a>
-                </div>
+                    <article class="chapter-card chapter-7">
+                        <div class="chapter-header">
+                            <div class="chapter-number">7</div>
+                            <div class="chapter-title">Value of Supply</div>
+                        </div>
+                        <a href="chapter7.html" class="chapter-link">Learn how to determine the taxable value of supplies</a>
+                    </article>
 
-                <div class="chapter-card chapter-8">
-                    <div class="chapter-header">
-                        <div class="chapter-number">8</div>
-                        <div class="chapter-title">Input Tax Credit</div>
-                    </div>
-                    <a href="chapter8.html" class="chapter-link">Understand the concept and conditions for claiming ITC</a>
-                </div>
+                    <article class="chapter-card chapter-8">
+                        <div class="chapter-header">
+                            <div class="chapter-number">8</div>
+                            <div class="chapter-title">Input Tax Credit</div>
+                        </div>
+                        <a href="chapter8.html" class="chapter-link">Understand the concept and conditions for claiming ITC</a>
+                    </article>
 
-                <div class="chapter-card chapter-9">
-                    <div class="chapter-header">
-                        <div class="chapter-number">9</div>
-                        <div class="chapter-title">Registration</div>
-                    </div>
-                    <a href="chapter9.html" class="chapter-link">Learn about GST registration requirements and procedures</a>
-                </div>
+                    <article class="chapter-card chapter-9">
+                        <div class="chapter-header">
+                            <div class="chapter-number">9</div>
+                            <div class="chapter-title">Registration</div>
+                        </div>
+                        <a href="chapter9.html" class="chapter-link">Learn about GST registration requirements and procedures</a>
+                    </article>
 
-                <div class="chapter-card chapter-10">
-                    <div class="chapter-header">
-                        <div class="chapter-number">10</div>
-                        <div class="chapter-title">Tax Invoice, Credit Notes and Debit Notes</div>
-                    </div>
-                    <a href="chapter10.html" class="chapter-link">Understand the requirements for tax invoices and related documents</a>
-                </div>
+                    <article class="chapter-card chapter-10">
+                        <div class="chapter-header">
+                            <div class="chapter-number">10</div>
+                            <div class="chapter-title">Tax Invoice, Credit Notes and Debit Notes</div>
+                        </div>
+                        <a href="chapter10.html" class="chapter-link">Understand the requirements for tax invoices and related documents</a>
+                    </article>
 
-                <div class="chapter-card chapter-11">
-                    <div class="chapter-header">
-                        <div class="chapter-number">11</div>
-                        <div class="chapter-title">Accounts and Records</div>
-                    </div>
-                    <a href="chapter11.html" class="chapter-link">Learn about maintaining proper accounts and records under GST</a>
-                </div>
+                    <article class="chapter-card chapter-11">
+                        <div class="chapter-header">
+                            <div class="chapter-number">11</div>
+                            <div class="chapter-title">Accounts and Records</div>
+                        </div>
+                        <a href="chapter11.html" class="chapter-link">Learn about maintaining proper accounts and records under GST</a>
+                    </article>
 
-                <div class="chapter-card chapter-12">
-                    <div class="chapter-header">
-                        <div class="chapter-number">12</div>
-                        <div class="chapter-title">E-Way Bill</div>
-                    </div>
-                    <a href="chapter12.html" class="chapter-link">Understand the e-way bill system for movement of goods</a>
-                </div>
+                    <article class="chapter-card chapter-12">
+                        <div class="chapter-header">
+                            <div class="chapter-number">12</div>
+                            <div class="chapter-title">E-Way Bill</div>
+                        </div>
+                        <a href="chapter12.html" class="chapter-link">Understand the e-way bill system for movement of goods</a>
+                    </article>
 
-                <div class="chapter-card chapter-13">
-                    <div class="chapter-header">
-                        <div class="chapter-number">13</div>
-                        <div class="chapter-title">Payment of Tax</div>
-                    </div>
-                    <a href="chapter13.html" class="chapter-link">Learn about various methods and procedures for GST payment</a>
-                </div>
+                    <article class="chapter-card chapter-13">
+                        <div class="chapter-header">
+                            <div class="chapter-number">13</div>
+                            <div class="chapter-title">Payment of Tax</div>
+                        </div>
+                        <a href="chapter13.html" class="chapter-link">Learn about various methods and procedures for GST payment</a>
+                    </article>
 
-                <div class="chapter-card chapter-14">
-                    <div class="chapter-header">
-                        <div class="chapter-number">14</div>
-                        <div class="chapter-title">TDS and TCS under GST</div>
-                    </div>
-                    <a href="chapter14.html" class="chapter-link">Understand Tax Deducted at Source and Tax Collected at Source</a>
-                </div>
+                    <article class="chapter-card chapter-14">
+                        <div class="chapter-header">
+                            <div class="chapter-number">14</div>
+                            <div class="chapter-title">TDS and TCS under GST</div>
+                        </div>
+                        <a href="chapter14.html" class="chapter-link">Understand Tax Deducted at Source and Tax Collected at Source</a>
+                    </article>
 
-                <div class="chapter-card chapter-15">
-                    <div class="chapter-header">
-                        <div class="chapter-number">15</div>
-                        <div class="chapter-title">GST Returns</div>
-                    </div>
-                    <a href="chapter15.html" class="chapter-link">Learn about different types of GST returns and filing procedures</a>
+                    <article class="chapter-card chapter-15">
+                        <div class="chapter-header">
+                            <div class="chapter-number">15</div>
+                            <div class="chapter-title">GST Returns</div>
+                        </div>
+                        <a href="chapter15.html" class="chapter-link">Learn about different types of GST returns and filing procedures</a>
+                    </article>
                 </div>
             </div>
-        </div>
+        </main>
 
-        <footer>
+        <footer role="contentinfo">
             <div class="footer-content">
                 <h3 class="footer-title">Tax Gurukul</h3>
                 <p class="footer-text">Your trusted resource for mastering Goods and Services Tax in India. Designed with clarity and accessibility for all learners.</p>
-                <p class="footer-text">© 2023 Tax Gurukul by Anil Kumar VT. All rights reserved.</p>
+                <p class="footer-text">© <span id="current-year">2023</span> Tax Gurukul by Anil Kumar VT. All rights reserved.</p>
             </div>
         </footer>
     </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Add visually hidden class for screen readers
+        document.head.insertAdjacentHTML('beforeend', '<style>.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }</style>');
+    </script>
 </body>
 </html>
